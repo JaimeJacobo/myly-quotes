@@ -6,6 +6,7 @@ const router = express.Router();
 const User = require('../models/User');
 const bcrypt = require('bcryptjs');
 const passport = require('passport');
+const ensureLogin = require("connect-ensure-login");
 
 router.get('/signup', (req, res, next)=>{
   res.render('users/signup', {message: req.flash('error')});
@@ -39,6 +40,24 @@ router.get('/logout', (req, res, next)=>{
   req.logout();
   res.redirect('/');
 });
+
+
+router.get("/login", (req, res, next) => {
+  res.render("users/login", { "message": req.flash("error") });
+});
+
+router.post("/login", passport.authenticate("local", {
+  successRedirect: "/",
+  failureRedirect: "/user/login",
+  failureFlash: true,
+  passReqToCallback: true
+}));
+
+router.get("/private-page", ensureLogin.ensureLoggedIn(), (req, res) => {
+  res.render("private", { user: req.user });
+});
+
+
 
 module.exports = router;
 

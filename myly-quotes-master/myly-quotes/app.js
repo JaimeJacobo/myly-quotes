@@ -15,6 +15,7 @@ const passport     = require('passport');
 const LocalStrategy= require('passport-local').Strategy;
 const flash        = require('connect-flash');
 
+
 const User         = require('./models/User');
 
 
@@ -63,18 +64,21 @@ passport.deserializeUser((id, cb)=>{
     } cb(null, user)
   })
 })
+
 app.use(flash());
+
 passport.use(new LocalStrategy((username, password, next)=>{
   User.findOne({username}, (err, user)=>{
     if(err){
       return next(err);
     }
     if(!user){
-      return next(null, false, {message: 'Incorrect username'})
+      return next(null, false, {message: 'Incorrect username. Please, try again.'})
     }
     if(!bcrypt.compareSync(password, user.password)){
-      return next(null, false, {message: 'Incorrect passport'})
-    } return next(null, user)
+      return next(null, false, {message: 'Incorrect password. Please, try again.'})
+    } 
+    return next(null, user)
   })
 }))
 
