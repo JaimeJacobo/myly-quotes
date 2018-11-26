@@ -1,4 +1,11 @@
 <div id="LogoAndSubtitle">
+  <div>
+    {{#if message}}
+    <div class="alert alert-success">
+      <p id="message">{{message}}</p>
+    </div>
+    {{/if}}
+  </div>
   <div id="mainLogoDiv">
     <img src="../images/JaimeLogo2.png" alt="" id="mainLogo">
   </div>
@@ -14,6 +21,3 @@
   {{/if}}
 </div>
 
-{{#if message}}
-<p>{{message}}</p>
-{{/if}}

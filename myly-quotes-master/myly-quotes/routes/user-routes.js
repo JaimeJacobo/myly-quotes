@@ -38,7 +38,7 @@ router.post('/signup', (req, res, next)=>{
 
 router.get('/logout', (req, res)=>{
   req.logout();
-  req.flash('success', 'Holaotravez')
+  req.flash('success', 'Log out succesfully')
   res.redirect('/');
 });
 
