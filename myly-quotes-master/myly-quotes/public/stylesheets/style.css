@@ -31,6 +31,32 @@ a {
 #errorMessageLogIn {
   margin: 10px 0; }
 
+#mainLogo {
+  width: 90vw; }
+
+#mainLogoDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+
+#LogoAndSubtitle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 40px;
+  height: 80vh; }
+
+#subtitleLogo {
+  padding: 0 50px;
+  font-family: Short Stack;
+  text-align: center;
+  font-size: 28px; }
+
+#subtitleLogo a {
+  font-size: 20px; }
+
 #animationText {
   text-align: center;
   color: #fff;
