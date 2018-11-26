@@ -8,6 +8,8 @@ const bcrypt = require('bcryptjs');
 const passport = require('passport');
 const ensureLogin = require("connect-ensure-login");
 
+
+
 router.get('/signup', (req, res, next)=>{
   res.render('users/signup', {message: req.flash('error')});
 });
@@ -61,6 +63,14 @@ router.get("/private-page", ensureLogin.ensureLoggedIn(), (req, res) => {
 
 router.get("/profile", ensureLogin.ensureLoggedIn('/user/login'), (req, res) => { 
     res.render("users/profile", { user: req.user });
+});
+
+router.get("/all-my-quotes", ensureLogin.ensureLoggedIn('/user/login'), (req, res) => { 
+  res.render("users/allMyQuotes", { user: req.user });
+});
+
+router.get("/post-new-quote", ensureLogin.ensureLoggedIn('/user/login'), (req, res) => { 
+  res.render("users/newQuote", { user: req.user });
 });
 
 

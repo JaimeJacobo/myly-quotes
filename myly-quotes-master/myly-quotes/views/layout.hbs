@@ -26,18 +26,20 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
+      {{#if user}}
       <li class="nav-item dropdown active">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           My Account
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="/user/profile">Profile</a>
-          <a class="dropdown-item" href="">New Quote</a>
-          <a class="dropdown-item" href="">All My Quotes</a>
+          <a class="dropdown-item" href="/user/post-new-quote">New Quote</a>
+          <a class="dropdown-item" href="/user/all-my-quotes">All My Quotes</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="/user/logout">Log out</a>
         </div>
       </li>
+      {{/if}}
       {{#if user}}
       {{else}}
       <li class="nav-item">
