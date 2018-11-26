@@ -36,8 +36,9 @@ router.post('/signup', (req, res, next)=>{
   })
 });
 
-router.get('/logout', (req, res, next)=>{
+router.get('/logout', (req, res)=>{
   req.logout();
+  req.flash('success', 'Holaotravez')
   res.redirect('/');
 });
 
@@ -47,7 +48,7 @@ router.get("/login", (req, res, next) => {
 });
 
 router.post("/login", passport.authenticate("local", {
-  successRedirect: "/",
+  successRedirect: "/user/profile",
   failureRedirect: "/user/login",
   failureFlash: true,
   passReqToCallback: true
@@ -55,6 +56,11 @@ router.post("/login", passport.authenticate("local", {
 
 router.get("/private-page", ensureLogin.ensureLoggedIn(), (req, res) => {
   res.render("private", { user: req.user });
+});
+
+
+router.get("/profile", ensureLogin.ensureLoggedIn('/user/login'), (req, res) => { 
+    res.render("users/profile", { user: req.user });
 });
 
 

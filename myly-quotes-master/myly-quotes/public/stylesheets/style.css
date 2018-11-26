@@ -57,6 +57,9 @@ a {
 #subtitleLogo a {
   font-size: 20px; }
 
+#logoImage {
+  height: 7vh; }
+
 #animationText {
   text-align: center;
   color: #fff;
