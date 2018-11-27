@@ -4,7 +4,9 @@
     <span class="letter" data-letter="Q">Quotebooks</span>
   <div id="allTheUserQuotebooks">
     {{#each quotes}}
-        {{this.name}}
+        <div class="card">
+          {{this.name}}
+        </div>
     {{/each}}
   </div> 
 </div>
