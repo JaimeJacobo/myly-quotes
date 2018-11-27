@@ -16,7 +16,9 @@ a {
 
 #navbarSupportedContent a {
   padding: 0 20px;
+
 }
+
 
 .container {
   margin-top: 20vh;
@@ -79,6 +81,10 @@ a {
   margin-bottom: 0;
 }
 
+#contentNewQuote {
+  width: 40vw;
+}
+
 
 
 
@@ -92,11 +98,15 @@ a {
 
 @media only screen and (max-width: 400px) {
   #animationText {
-    padding-top:50px;
+    padding-top:70px;
   }
 
   .login {
     margin-top: -50px;
+  }
+
+  #subtitleLogo {
+    font-size: 20px;
   }
 }
 

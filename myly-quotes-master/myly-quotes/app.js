@@ -19,6 +19,7 @@ const flash        = require('connect-flash');
 const User         = require('./models/User');
 
 
+
 mongoose
   .connect('mongodb://localhost/myly-quotes', {useNewUrlParser: true})
   .then(x => {
@@ -107,6 +108,9 @@ const index = require('./routes/index');
 app.use('/', index);
 
 app.use('/user', require('./routes/user-routes'));
+app.use('/user', require('./routes/quotebooks-routes'));
+
+
 
 
 module.exports = app;

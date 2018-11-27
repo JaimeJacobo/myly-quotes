@@ -65,13 +65,9 @@ router.get("/profile", ensureLogin.ensureLoggedIn('/user/login'), (req, res) => 
     res.render("users/profile", { user: req.user });
 });
 
-router.get("/all-my-quotes", ensureLogin.ensureLoggedIn('/user/login'), (req, res) => { 
-  res.render("users/allMyQuotes", { user: req.user });
-});
 
-router.get("/post-new-quote", ensureLogin.ensureLoggedIn('/user/login'), (req, res) => { 
-  res.render("users/newQuote", { user: req.user });
-});
+
+
 
 
 
