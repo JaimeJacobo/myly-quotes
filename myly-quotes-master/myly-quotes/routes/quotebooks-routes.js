@@ -20,8 +20,6 @@ router.post('/new-quotebook', (req, res, next)=>{
       .then((theUser)=>{
         theUser.quotebooks.push(theNewQuotebook)
         theUser.save();
-        console.log(theUser)
-        console.log(theNewQuotebook)
       })
       .catch((err)=>{
         next(err)

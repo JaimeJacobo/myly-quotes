@@ -8,17 +8,16 @@ a {
   color: #00B7FF;
 }
 
-.background {
-  background-color: coral;
-}
+
 
 #content {
   margin: 10px;
 }
 
+
+
 #navbarSupportedContent a {
   padding: 0 20px;
-
 }
 
 
@@ -199,14 +198,17 @@ div.foo{
 
 }
 
+
 //Cool bootstrap stuff
 
 .card {
+  color: rgb(58,108,160);
   background: #fff;
   border-radius: 2px;
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
   height: 100px;
   margin: 1rem;
   width: 100px;
