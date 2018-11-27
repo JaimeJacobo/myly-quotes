@@ -1,6 +1,8 @@
+
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
+
 
 a {
   color: #00B7FF;
@@ -104,21 +106,7 @@ a {
 
 * { color:#000; text-decoration: none;}
 
-@media only screen and (max-width: 400px) {
-  #animationText {
-    padding-top:70px;
-  }
 
-  .login {
-    margin-top: -50px;
-  }
-
-  #subtitleLogo {
-    font-size: 20px;
-  }
-
-
-}
 
 #quotebooksDiv {
   display: flex;
@@ -141,7 +129,7 @@ div.foo{
   font-size: 10vw;
   margin: 0.2em;
   position: relative;
-  color: #00B4F1;
+  color:rgb(129,171,216);
   transform-style: preserve-3d;
   perspective: 400;
   z-index: 1;
@@ -157,7 +145,7 @@ div.foo{
   transition: all 0.3s ease-in-out;
 }
 .letter:before{
-  color: rgb(52, 80, 102);
+  color: white;
   text-shadow: 
     -1px 0px 1px rgba(255,255,255,.8),
     1px 0px 1px rgba(0,0,0,.8);
@@ -191,4 +179,53 @@ div.foo{
     rotateY(40deg)
     rotateZ(0deg)
     skew(0deg,22deg);
+}
+
+#loading {
+  -webkit-animation: rotation 20s infinite linear;
+  margin-top: 80px;
+  width: 15vw;
+}
+
+@-webkit-keyframes rotation {
+  from {
+      -webkit-transform: rotate(0deg);
+  }
+  to {
+      -webkit-transform: rotate(359deg);
+  }
+}
+
+#welcomeMessage {
+  font-size: 4vw;
+}
+
+
+@media only screen and (max-width: 400px) {
+  #animationText {
+    padding-top:70px;
+  }
+
+  .login {
+    margin-top: -50px;
+  }
+
+  #subtitleLogo {
+    font-size: 20px;
+  }
+
+  #welcomeMessage{
+    font-size: 6vw;
+  }
+
+  #loading {
+    width: 50vw;
+  }
+}
+
+
+@media only screen and (max-width: 1100px) {
+  #loading {
+    width: 50vw;
+  }
 }
