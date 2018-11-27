@@ -15,7 +15,17 @@ router.get("/new-quotebook", ensureLogin.ensureLoggedIn('/user/login'), (req, re
 router.post('/new-quotebook', (req, res, next)=>{
   
     Quotebook.create(req.body)
-    .then(()=>{
+    .then((theNewQuotebook)=>{
+      User.findById(req.user.id)
+      .then((theUser)=>{
+        theUser.quotebooks.push(theNewQuotebook)
+        theUser.save();
+        console.log(theUser)
+        console.log(theNewQuotebook)
+      })
+      .catch((err)=>{
+        next(err)
+      })
       res.redirect('/user/all-my-quotes');
     })
     .catch((err)=>{
@@ -25,8 +35,15 @@ router.post('/new-quotebook', (req, res, next)=>{
 
 
 
-router.get("/all-my-quotes", ensureLogin.ensureLoggedIn('/user/login'), (req, res) => { 
-  res.render("users/allMyQuotes", { user: req.user });
+router.get("/all-my-quotes", ensureLogin.ensureLoggedIn('/user/login'), (req, res) => {
+  User.findById(req.user._id).populate('quotebooks')
+  .then((theUser)=>{
+    res.render("users/allMyQuotes", {quotes: theUser.quotebooks});
+  })
+  .catch((err)=>{
+    next(err)
+
+  }) 
 });
 
 module.exports = router;
