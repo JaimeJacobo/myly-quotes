@@ -7,6 +7,9 @@ a {
 #content {
   margin: 10px; }
 
+.font {
+  font-family: "Lucida Grande", Helvetica, Arial, sans-serif; }
+
 .navbar {
   font: 14px "Short Stack", "Lucida Grande", Helvetica, Arial, sans-serif; }
 
@@ -179,6 +182,19 @@ div.foo {
 
 #linksQuotebooks:hover {
   text-decoration: none; }
+
+#contentOfDetails {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  height: 80vh; }
+
+#allTheQuotes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; }
 
 @-webkit-keyframes rotation {
   from {
