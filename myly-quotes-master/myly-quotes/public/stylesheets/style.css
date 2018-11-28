@@ -25,6 +25,9 @@ a {
   font-family: 'Short Stack';
   font-size: 22px; }
 
+.pointerDefault {
+  cursor: default; }
+
 #errorMessageLogIn {
   margin: 10px 0; }
 
@@ -99,7 +102,8 @@ div.foo {
   color: #81abd8;
   transform-style: preserve-3d;
   perspective: 400;
-  z-index: 1; }
+  z-index: 1;
+  cursor: default; }
 
 .letter:before, .letter:after {
   position: absolute;
@@ -129,13 +133,23 @@ div.foo {
 .letter:hover:after {
   transform: scale(1.08, 1) rotateX(0deg) rotateY(40deg) rotateZ(0deg) skew(0deg, 22deg); }
 
-#loading {
-  -webkit-animation: rotation 20s infinite linear;
-  margin-top: 80px;
-  width: 15vw; }
+.loading {
+  margin-top: 65px;
+  width: 15vw;
+  cursor: pointer; }
+
+.loadingFaster {
+  -webkit-animation: rotation 1.5s infinite linear;
+  margin-top: 65px;
+  width: 15vw;
+  cursor: pointer; }
 
 #welcomeMessage {
-  font-size: 4vw; }
+  font-size: 4vw;
+  cursor: default; }
+
+#clickOnTheLogoMessage {
+  cursor: default; }
 
 #allTheUserQuotebooks {
   display: flex;
@@ -160,6 +174,9 @@ div.foo {
 .card:hover {
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); }
 
+#linksQuotebooks:hover {
+  text-decoration: none; }
+
 @-webkit-keyframes rotation {
   from {
     -webkit-transform: rotate(0deg); }
@@ -175,11 +192,15 @@ div.foo {
     font-size: 20px; }
   #welcomeMessage {
     font-size: 6vw; }
-  #loading {
+  .loading {
+    width: 50vw; }
+  .loadingFaster {
     width: 50vw; } }
 
 @media only screen and (max-width: 1100px) {
-  #loading {
+  .loading {
+    width: 50vw; }
+  .loadingFaster {
     width: 50vw; } }
 
 /*# sourceMappingURL=style.css.map */

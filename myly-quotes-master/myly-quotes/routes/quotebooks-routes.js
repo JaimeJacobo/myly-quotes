@@ -31,8 +31,6 @@ router.post('/new-quotebook', (req, res, next)=>{
     })
 });
 
-
-
 router.get("/all-my-quotes", ensureLogin.ensureLoggedIn('/user/login'), (req, res) => {
   User.findById(req.user._id).populate('quotebooks')
   .then((theUser)=>{
