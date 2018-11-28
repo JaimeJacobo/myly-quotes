@@ -1,0 +1,30 @@
+<h2> {{quotebook.name}} Quotebook</h2>
+
+<form action="/user/addQuote/{{quotebook._id}}" method="post">
+  <label for="addQuoteInput">Add Your Quote</label>
+  <input id="addQuoteInput" type="text" name="quoteInput" />
+  <br />
+
+  <label for="addSongInput">From What Song</label>
+  <input id="addSongInput" type="text" name="songInput" />
+  <br />
+
+  <label for="addArtistInput">Which Artist Said this Quote?</label>
+  <input id="addArtistInput" type="text" name="artistInput" />
+  <br />
+
+  <button>Save Your Quote</button>
+</form>
+
+<div>
+  {{#each quotebook.quotes}}
+    <div>
+      <h3>Quote: {{this.name}}</h3>
+      <h4>Said By: {{this.artist}}</h4>
+      <h4>In Song: {{this.song}}</h4>
+      <form action="/user/deleteQuote/{{this._id}}/{{this.quotebook}}" method="post">
+        <button>Delete This Quote</button>
+      </form>
+    </div>
+  {{/each}}
+</div>

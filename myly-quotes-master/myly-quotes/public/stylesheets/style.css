@@ -7,6 +7,9 @@ a {
 #content {
   margin: 10px; }
 
+.navbar {
+  font: 14px "Short Stack", "Lucida Grande", Helvetica, Arial, sans-serif; }
+
 #navbarSupportedContent a {
   padding: 0 20px; }
 

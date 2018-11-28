@@ -99,7 +99,7 @@ let previousSong = 0;
 
 $(".loading").click(()=>{
 
-let stopAndRestartMusic = (()=>{
+  let stopAndRestartMusic = (()=>{
       audio.pause();
       audio.currentTime = 0;
       audio2.pause();
@@ -150,7 +150,6 @@ let stopAndRestartMusic = (()=>{
 
   count++;
   
-
 });
 
 
