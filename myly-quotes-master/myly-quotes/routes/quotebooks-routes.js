@@ -88,4 +88,20 @@ router.post('/deleteQuote/:id/:quotebookID', (req, res, next) => {
   })
 })
 
+
+router.post('/deleteQuotebook/:id', (req, res, next) => {
+  console.log("going to delete a quote )))))))))))))))))))))))))))))))");
+  Quotebook.findByIdAndDelete(req.params.id)
+  .then(() => {
+    console.log("quote has been deleted  <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
+    res.redirect(`/user/all-my-quotes`);
+  })
+  .catch(err => {
+    next(err);
+  })
+})
+
+// /user/deleteQuotebook/{{quotebook._id}}
+
+
 module.exports = router;
